@@ -33,3 +33,6 @@ $ ./runtest-cluster # runs Redis Cluster tests
 * bitmaps and hyperlologs - which are actually data types based on the string base type, but having their own semantics
 
 ## [Clients, browse by language](https://redis.io/docs/clients/)
+
+## Useful links
+* [Redis Explained](https://architecturenotes.co/redis/) 
