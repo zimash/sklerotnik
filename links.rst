@@ -11,6 +11,11 @@ Coding
 * `ASCII Flow <https://asciiflow.com/>`_
 * `Compiler Explorer <https://godbolt.org/>`_
 
+Sources
+-------
+* `Linux (Kernel) source code <https://elixir.bootlin.com/linux/latest/source/>`_
+* `Qemu source code <https://elixir.bootlin.com/qemu/latest/source/>`_
+
 English
 -------
 * `Cambridge Dictionary <https://dictionary.cambridge.org/dictionary/english/>`_
