@@ -15,6 +15,7 @@ Sources
 -------
 * `Linux (Kernel) source code <https://elixir.bootlin.com/linux/latest/source/>`_
 * `Qemu source code <https://elixir.bootlin.com/qemu/latest/source/>`_
+* `LXR linux source code <https://lxr.missinglinkelectronics.com/linux/>`_
 
 English
 -------
