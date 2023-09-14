@@ -10,6 +10,7 @@ Coding
 * `Online C Compiler <https://www.onlinegdb.com/online_c_compiler/>`_
 * `ASCII Flow <https://asciiflow.com/>`_
 * `Compiler Explorer <https://godbolt.org/>`_
+* `Online x86 / x64 Assembler and Disassembler <https://defuse.ca/online-x86-assembler.htm>`_
 
 Sources
 -------
