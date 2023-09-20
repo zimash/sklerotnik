@@ -8,7 +8,8 @@ Components:
 
 
 Build::
-  
+
+   $ git clone git://git.yoctoproject.org/poky
    $ source <pokypath>/oe-init-build-env [builddir] # directory with build name will be created by default
    $ bitbake core-image-sato 
 
