@@ -32,3 +32,8 @@ Buildroot
    STAGING_DIR                 - $(TOPDIR)/output/host/<ARCH>/sysroot, for example - STAGING_DIR=~/git/buildroot/output/host/i686-buildroot-linux-gnu/sysroot
    TARGET_DIR                  - $(TOPDIR)/output/target, for example TARGET_DIR=~/git/buildroot/output/target
    BUILD_DIR                   - $(TOPDIR)/output/build, for example BUILD_DIR=~/git/buildroot/output/build
+
+Links
+-----
+
+* `General Buildroot usage <https://bootlin.com/~thomas/site/buildroot/common-usage.html>`_
