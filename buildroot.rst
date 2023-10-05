@@ -12,9 +12,20 @@ Buildroot
    $ make <pkg>-rebuild        # Restart the build from the build step
    $ make <pkg>-dirclean       # Remove <pkg> build directory
    $ make menuconfig           # Interactive curses-based configurator
-   $ make linux-menuconfig     # Run Linux kernel menuconfig
+   $ make list-defconfigs      # Display the list of boards with a defconfig
+
+   $ make linux-menuconfig     # Run Linux kernel menuconfig (Only work when linux is enabled)
+   $ make busybox-menuconfig   # Run busybox menuconfig (Only works when busybox is enabled)
+   $ make uclibc-menuconfig    # Run uclibc menuconfig (Only available when the uClibc C library is selected in the internal toolchain backend)
+   $ make barebox-menuconfig   # Run barebox menuconfig (Only work when the barebox bootloader is enabled)
+   $ make uboot-menuconfig     # Run uboot menuconfig (Only work when the U-Boot bootloader is enabled and the uboot build system is set to Kconfig)
+
    $ make source               # Download all sources needed for offline-build (configuration dependent)
    $ make graph-depends        # Generate graph of the dependency tree
+
+   # Notes. If ccache is enabled, running make clean or distclean does not empty the compiler cache used by Buildroot.
+   $ make clean                # To delete all build products (including build directories, host, staging and target trees, the images and the toolchain)
+   $ make distclean            # Resetting Buildroot for a new target: To delete all build products as well as the configuration 
 
 * Directories::
 
