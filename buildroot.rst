@@ -16,31 +16,60 @@ Buildroot
 
    $ make linux-menuconfig     # Run Linux kernel menuconfig (Only work when linux is enabled)
    $ make busybox-menuconfig   # Run busybox menuconfig (Only works when busybox is enabled)
-   $ make uclibc-menuconfig    # Run uclibc menuconfig (Only available when the uClibc C library is selected in the internal toolchain backend)
+   $ make uclibc-menuconfig    # Run uclibc menuconfig (Only available when the uClibc C library is selected in the 
+                                 internal toolchain backend)
    $ make barebox-menuconfig   # Run barebox menuconfig (Only work when the barebox bootloader is enabled)
-   $ make uboot-menuconfig     # Run uboot menuconfig (Only work when the U-Boot bootloader is enabled and the uboot build system is set to Kconfig)
+   $ make uboot-menuconfig     # Run uboot menuconfig (Only work when the U-Boot bootloader is enabled and the uboot
+                                 build system is set to Kconfig)
 
    $ make source               # Download all sources needed for offline-build (configuration dependent)
    $ make graph-depends        # Generate graph of the dependency tree
 
    # Notes. If ccache is enabled, running make clean or distclean does not empty the compiler cache used by Buildroot.
-   $ make clean                # To delete all build products (including build directories, host, staging and target trees, the images and the toolchain)
-   $ make distclean            # Resetting Buildroot for a new target: To delete all build products as well as the configuration 
+   $ make clean                # To delete all build products (including build directories, host, staging and target 
+                                 trees, the images and the toolchain)
+   $ make distclean            # Resetting Buildroot for a new target: To delete all build products as well as the 
+                                 configuration 
 
 * Directories::
 
    board                       - board specific files;
    configs                     - board defconfigs;
    dl                          - directory with downloaded archive/source files;
-   output/target               - builded file system with OS that is used for final images;
-   output/host                 - host-tools for buildingl;
-   output/build                - created packages.
+   image                       - where all the images (kernel image, bootloader and root filesystem images) are stored. 
+                                 These are the files you need to put on your target system. 
+   output/target               - which contains almost the complete root filesystem for the target: everything needed 
+                                 is present except the device files in /dev/ (Buildroot can’t create them because 
+                                 Buildroot doesn’t run as root and doesn’t want to run as root). Also, it doesn’t have
+                                 the correct permissions (e.g. setuid for the busybox binary). Therefore, this directory 
+                                 should not be used on your target. Instead, you should use one of the images built in 
+                                 the images/ directory. If you need an extracted image of the root filesystem for booting 
+                                 over NFS, then use the tarball image generated in images/ and extract it as root. 
+                                 Compared to staging/, target/ contains only the files and libraries needed to run the 
+                                 selected target applications: the development files (headers, etc.) are not present, 
+                                 the binaries are stripped. builded file system with OS that is used for final images;
+   output/staging              - is a symlink to the target toolchain sysroot inside host/, which exists for backwards
+                                 compatibility. 
+   output/host                 - contains both the tools built for the host, and the sysroot of the target toolchain. 
+                                 The former is an installation of tools compiled for the host that are needed for the 
+                                 proper execution of Buildroot, including the cross-compilation toolchain. The latter 
+                                 is a hierarchy similar to a root filesystem hierarchy. It contains the headers and 
+                                 libraries of all user-space packages that provide and install libraries used by 
+                                 other packages. However, this directory is not intended to be the root filesystem 
+                                 for the target: it contains a lot of development files, unstripped binaries and 
+                                 libraries that make it far too big for an embedded system. These development files 
+                                 are used to compile libraries and applications for the target that depend on other 
+                                 libraries.;
+   output/build                - where all the components are built (this includes tools needed by Buildroot on the host 
+                                 and packages compiled for the target). This directory contains one subdirectory for each
+                                 of these components.
 
 * Variables::
 
    TOPDIR                      - the root directory of buildroot, for example - TOPDIR=~/git/buildroot 
    BASEDIR                     - $(TOPDIR)/output/host, for example - HOST_DIR=~/git/buildroot/output/host
-   STAGING_DIR                 - $(TOPDIR)/output/host/<ARCH>/sysroot, for example - STAGING_DIR=~/git/buildroot/output/host/i686-buildroot-linux-gnu/sysroot
+   STAGING_DIR                 - $(TOPDIR)/output/host/<ARCH>/sysroot, for example:
+                                 STAGING_DIR=~/git/buildroot/output/host/i686-buildroot-linux-gnu/sysroot
    TARGET_DIR                  - $(TOPDIR)/output/target, for example TARGET_DIR=~/git/buildroot/output/target
    BUILD_DIR                   - $(TOPDIR)/output/build, for example BUILD_DIR=~/git/buildroot/output/build
 
