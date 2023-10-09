@@ -13,6 +13,8 @@ Buildroot
    $ make <pkg>-dirclean       # Remove <pkg> build directory
    $ make menuconfig           # Interactive curses-based configurator
    $ make list-defconfigs      # Display the list of boards with a defconfig
+   $ make show-info            # Generate info about packages, as a JSON blurb
+   $ make pkg-stats            # Generate info about packages as JSON and HTML
 
    $ make linux-menuconfig     # Run Linux kernel menuconfig (Only work when linux is enabled)
    $ make busybox-menuconfig   # Run busybox menuconfig (Only works when busybox is enabled)
