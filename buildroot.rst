@@ -33,12 +33,12 @@ Buildroot
 
 * Directories::
 
-   board                       - board specific files;
-   configs                     - board defconfigs;
-   dl                          - directory with downloaded archive/source files;
-   image                       - where all the images (kernel image, bootloader and root filesystem images) are stored. 
+   board/                      - board specific files;
+   configs/                    - board defconfigs;
+   dl/                         - directory with downloaded archive/source files;
+   output/images/              - where all the images (kernel image, bootloader and root filesystem images) are stored. 
                                  These are the files you need to put on your target system. 
-   output/target               - which contains almost the complete root filesystem for the target: everything needed 
+   output/target/              - which contains almost the complete root filesystem for the target: everything needed 
                                  is present except the device files in /dev/ (Buildroot can’t create them because 
                                  Buildroot doesn’t run as root and doesn’t want to run as root). Also, it doesn’t have
                                  the correct permissions (e.g. setuid for the busybox binary). Therefore, this directory 
@@ -48,9 +48,9 @@ Buildroot
                                  Compared to staging/, target/ contains only the files and libraries needed to run the 
                                  selected target applications: the development files (headers, etc.) are not present, 
                                  the binaries are stripped. builded file system with OS that is used for final images;
-   output/staging              - is a symlink to the target toolchain sysroot inside host/, which exists for backwards
+   output/staging/             - is a symlink to the target toolchain sysroot inside host/, which exists for backwards
                                  compatibility. 
-   output/host                 - contains both the tools built for the host, and the sysroot of the target toolchain. 
+   output/host/                - contains both the tools built for the host, and the sysroot of the target toolchain. 
                                  The former is an installation of tools compiled for the host that are needed for the 
                                  proper execution of Buildroot, including the cross-compilation toolchain. The latter 
                                  is a hierarchy similar to a root filesystem hierarchy. It contains the headers and 
@@ -60,7 +60,7 @@ Buildroot
                                  libraries that make it far too big for an embedded system. These development files 
                                  are used to compile libraries and applications for the target that depend on other 
                                  libraries.;
-   output/build                - where all the components are built (this includes tools needed by Buildroot on the host 
+   output/build/               - where all the components are built (this includes tools needed by Buildroot on the host 
                                  and packages compiled for the target). This directory contains one subdirectory for each
                                  of these components.
 
