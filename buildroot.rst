@@ -69,9 +69,11 @@ Buildroot
 * Variables::
 
    TOPDIR                      - the root directory of buildroot, for example - TOPDIR=~/git/buildroot 
-   BASEDIR                     - $(TOPDIR)/output/host, for example - HOST_DIR=~/git/buildroot/output/host
+   BASE_DIR                    - $(TOPDIR)/output/host, for example - HOST_DIR=~/git/buildroot/output
+   HOST_DIR                    - $(TOPDIR)/output/host, for example - HOST_DIR=~/git/buildroot/output/host
    STAGING_DIR                 - $(TOPDIR)/output/host/<ARCH>/sysroot, for example:
                                  STAGING_DIR=~/git/buildroot/output/host/i686-buildroot-linux-gnu/sysroot
+                                 STAGING_DIR=~/git/buildroot/output/host/aarch64-buildroot-linux-gnu/sysroot
    TARGET_DIR                  - $(TOPDIR)/output/target, for example TARGET_DIR=~/git/buildroot/output/target
    BUILD_DIR                   - $(TOPDIR)/output/build, for example BUILD_DIR=~/git/buildroot/output/build
 
