@@ -66,6 +66,28 @@ Buildroot
                                  and packages compiled for the target). This directory contains one subdirectory for each
                                  of these components.
 
+* Stages::
+
+   Download, Configure, Build, Install
+
+* Types of packages (the recipes are stored in package/pkg-*.mk files)::
+
+   autotools-package           $(eval $(autotools-package)) and $(eval $(host-autotools-package))   
+   cargo-package               $(eval $(cargo-package)) and $(eval $(host-cargo-package)) 
+   cmake-package               $(eval $(cmake-package)) and $(eval $(host-cmake-package))               
+   generic-package             $(eval $(generic-package)) and $(eval $(host-generic-package))
+   golang-package              $(eval $(golang-package)) and $(eval $(host-golang-package))
+   kconfig-package             $(eval $(kconfig-package))
+   kernel-module               $(eval $(kernel-module))
+   luarocks-package            $(eval $(luarocks-package))
+   meson-package               $(eval $(meson-package)) and $(eval $(host-meson-package))
+   perl-package                $(eval $(perl-package)) and $(eval $(host-perl-package))
+   python-package              $(eval $(python-package)) and $(eval $(host-python-package))
+   qmake-package               $(eval $(qmake-package)) 
+   rebar-package               $(eval $(rebar-package)) and $(eval $(host-rebar-package))
+   virtual-package             $(eval $(virtual-package)) and $(eval $(host-virtual-package))
+   waf-package                 $(eval $(waf-package)) and 
+
 * Variables::
 
    TOPDIR                      - the root directory of buildroot, for example - TOPDIR=~/git/buildroot 
