@@ -68,7 +68,7 @@ Buildroot
 
 * Stages::
 
-   Download, Configure, Build, Install
+   Download source, Depends, Extract, Patch, Configure, Build, Install
 
 * Types of packages (the recipes are stored in package/pkg-*.mk files)::
 
