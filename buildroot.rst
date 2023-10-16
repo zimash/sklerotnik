@@ -66,8 +66,8 @@ Buildroot
                                  and packages compiled for the target). This directory contains one subdirectory for each
                                  of these components.
 
-* The package build targets are (in the order they are executed):
-
+* `The package build targets are (in the order they are executed): <https://nightly.buildroot.org/#pkg-build-steps>`_
+  
   Command/Target ::
 
    source:                     Fetch the source (download the tarball, clone the source repository, etc)
