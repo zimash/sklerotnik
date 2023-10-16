@@ -66,9 +66,20 @@ Buildroot
                                  and packages compiled for the target). This directory contains one subdirectory for each
                                  of these components.
 
-* Stages::
+* The package build targets are (in the order they are executed):
 
-   Download source, Depends, Extract, Patch, Configure, Build, Install
+  Command/Target ::
+
+   source:                     Fetch the source (download the tarball, clone the source repository, etc)
+   depends                     Build and install all dependencies required to build the package
+   extract                     Put the source in the package build directory (extract the tarball, copy the source, etc)
+   patch                       Apply the patches, if any
+   configure                   Run the configure commands, if any
+   build                       Run the compilation commands
+   install-staging             target package: Run the installation of the package in the staging directory, if necessary
+   install-target              target package: Run the installation of the package in the target directory, if necessary
+   install                     target package: Run the 2 previous installation commands
+                               host package: Run the installation of the package in the host directory
 
 * Types of packages (the recipes are stored in package/pkg-*.mk files)::
 
