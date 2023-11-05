@@ -17,6 +17,8 @@ zcat /proc/config.gz > ./.config # or make defconfig or cp /boot/config-$(uname 
 make mrproper #
 make clean # or make distclean 
 make [-j $(nproc)] # After 2.6 kernel, no need to run $ make dep before building kernel
+make -C /lib/modules/$(uname -r)/build M=$PWD [modules] # build modules
+make -C /lib/modules/$(uname -r)/build M=$PWD clean # clean builded files
 ```
 
 * installing the new kernel
