@@ -55,4 +55,4 @@ NF_REPEAT 4
 # LINKS
 * [KUnit - Linux Kernel Unit Testing » Getting Started](https://docs.kernel.org/dev-tools/kunit/start.html)
 * [Linux kernel source](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git)
-* [Linux Device Driver Tutorial](https://embetronicx.com/tutorials/linux/device-drivers/)
+* [Linux Device Driver Tutorial](https://embetronicx.com/linux-device-driver-tutorials/)
