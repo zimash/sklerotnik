@@ -35,6 +35,27 @@ Buildroot
 
 * Directories::
 
+                                    .---------.
+                                    |         |
+                                    | output/ |
+                                    |         |
+                                    '+-+-+-+-+'
+                                     | | | | |
+                .--------------------' | | | '--------------------.
+                |            .---------' | '----------.           |
+                |            |           |            |           |
+           .----v----.   .---v----.  .---v---.  .-----v----. .----v----.
+           |         |   |        |  |       |  |          | |         |
+           | images/ |   | build/ |  | host/ |  | staging/ | | target/ |
+           |         |   |        |  |       |  |          | |         |
+           '---------'   '--------'  '---+---'  '----------' '---------'
+                                         |            |
+                                         |            '-----------.
+                                         |                        | (symlink)
+                      .------------------v------------------.     |
+                      | $(ARCH)-buildroot-linux-gnu/sysroot <-----'
+                      '-------------------------------------'
+
    board/                      - board specific files;
    configs/                    - board defconfigs;
    dl/                         - directory with downloaded archive/source files;
