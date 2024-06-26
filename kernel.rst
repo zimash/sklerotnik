@@ -47,6 +47,11 @@ Manupulating the current process state
   set_task_state(task, state); /* set task `task` to state `state` */
   set_current_state(state);    /* is synonymous to set_task_state(current, state) */
 
+Error Codes
+===========
+* `errno-base.h <https://elixir.bootlin.com/linux/latest/source/include/uapi/asm-generic/errno-base.h>`_
+* `errno.h <https://elixir.bootlin.com/linux/latest/source/include/uapi/asm-generic/errno.h>`_
+
 Firewalls
 =========
 .. code-block:: C
