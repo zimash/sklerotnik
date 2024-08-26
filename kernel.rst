@@ -79,3 +79,4 @@ Links
 * `Linux Test Project <https://linux-test-project.readthedocs.io/en/latest/>`_
 * `Majordomo lists at VGER.KERNEL.ORG <http://vger.kernel.org/vger-lists.html>`_
 * `vger.kernel.org <https://subspace.kernel.org/vger.kernel.org.html>`_
+* `Kernel Size Tuning Guide <https://elinux.org/Kernel_Size_Tuning_Guide>`_
