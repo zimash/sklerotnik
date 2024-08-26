@@ -22,6 +22,13 @@ Compile
   make -C /lib/modules/$(uname -r)/build M=$PWD [modules] # build modules
   make -C /lib/modules/$(uname -r)/build M=$PWD clean # clean builded files
 
+
+  size vmlinux # отображает размер секций и общий размер бинарного файла
+  $ size vmlinux # пример вызова size
+     text    data     bss     dec     hex filename
+   902095  321424 1200128 2423647  24fb5f vmlinux
+
+
 Installing the new kernel
 =========================
 .. code-block:: shell
