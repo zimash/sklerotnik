@@ -1,0 +1,14 @@
+====
+V4L2
+====
+
+
+Ссылки:
+-------
+
+* `Part I - Video for Linux API. This part describes the Video for Linux API version 2 (V4L2 API) specification. v4.9 <https://www.kernel.org/doc/html/v4.9/media/uapi/v4l/v4l2.html>`_
+* `Multimedia and Television Support on Linux <https://www.linuxtv.org/>`_
+* `Video for Linux version 2 (V4L2) examples  <https://github.com/kmdouglass/v4l2-examples>`_
+* `1. Video2Linux devices. v4.9 <https://www.kernel.org/doc/html/v4.9/media/kapi/v4l2-core.html>`_
+* `V4L: A Complete Practical Tutorial <https://medium.com/@deepeshdeepakdd2/v4l-a-complete-practical-tutorial-c520f097b590>`_
+* `7.1. Differences between V4L and V4L2 <https://www.kernel.org/doc/html/v4.9/media/uapi/v4l/diff-v4l.html>`_
