@@ -18,3 +18,13 @@ kernel tinyconfig для qemu
   CONFIG_TTY                 # Поддержка TTY
   CONFIG_SERIAL_8250         # Поддержка 8250/16550 и совместимых
   CONFIG_SERIAL_8250_CONSOLE # Возможность использования последовательного порта как системной консолью
+  CONFIG_PRINTK              # Включение поддержки printk
+
+Это минимальное количество опций для сборки ядра и загрузки его в qemu.
+
+Запуск:
+
+.. code-block:: shell
+
+  $ qemu-system-x86_64 -kernel arch/x86/boot/bzImage # Или
+  $ qemu-system-x86_64 -kernel arch/x86/boot/bzImage -append "console=ttyS0" -nographic
