@@ -133,11 +133,23 @@ Buildroot
 
 * Other::
 
-   Buildroot can be built with -j $(nproc) argument. This option allows you to build multiple packages
+   * Buildroot can be built with -j $(nproc) argument. This option allows you to build multiple packages
    at the same time. But it option is experimental and works well in unpstream
    buildroot. To enable this feature we must set BR2_PER_PACKAGES_DIRECTORY to 'y'. 
+
+
+   * В условиях, когда мы работаем над каким-то компонентом, парадигма Buildroot-a неудобна. 
+   При make <pkg->clean чистится директория с распакованными исходниками, при очередной сборке вновь 
+   происходит распаковка/накладывание патчей из скаченного тарбола, который поступает из апстримных источников.
+   Для обхода этого Buidlroot предоставляет специальный механизм <pkg>_OVERRIDE_SRCDIR. Buildroot считывает 
+   файл переопределения - local.mk, который позволяет пользователю сообщать Buildroot местоположение источника
+   для определенных пакетов. Пример:
+
+   LINUX_OVERRIDE_SRCDIR = /home/bob/linux/
+   BUSYBOX_OVERRIDE_SRCDIR = /home/bob/busybox/
 
 Links
 -----
 
 * `General Buildroot usage <https://bootlin.com/~thomas/site/buildroot/common-usage.html>`_
+* `8.13.6. Using Buildroot during development <https://buildroot.org/downloads/manual/manual.html#_advanced_usage>`_
