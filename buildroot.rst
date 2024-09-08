@@ -141,7 +141,7 @@ Buildroot
    * В условиях, когда мы работаем над каким-то компонентом, парадигма Buildroot-a неудобна. 
    При make <pkg->clean чистится директория с распакованными исходниками, при очередной сборке вновь 
    происходит распаковка/накладывание патчей из скаченного тарбола, который поступает из апстримных источников.
-   Для обхода этого Buidlroot предоставляет специальный механизм <pkg>_OVERRIDE_SRCDIR. Buildroot считывает 
+   Для обхода этого Buidlroot предоставляет специальный механизм <pkg>_OVERRIDE_SRCDIR [2]. Buildroot считывает 
    файл переопределения - local.mk, который позволяет пользователю сообщать Buildroot местоположение источника
    для определенных пакетов. Пример:
 
@@ -151,5 +151,6 @@ Buildroot
 Links
 -----
 
-* `General Buildroot usage <https://bootlin.com/~thomas/site/buildroot/common-usage.html>`_
-* `8.13.6. Using Buildroot during development <https://buildroot.org/downloads/manual/manual.html#_advanced_usage>`_
+[1] `General Buildroot usage <https://bootlin.com/~thomas/site/buildroot/common-usage.html>`_
+
+[2] `8.13.6. Using Buildroot during development <https://buildroot.org/downloads/manual/manual.html#_advanced_usage>`_
