@@ -77,7 +77,7 @@ Buildroot
                                  The former is an installation of tools compiled for the host that are needed for the 
                                  proper execution of Buildroot, including the cross-compilation toolchain. The latter 
                                  is a hierarchy similar to a root filesystem hierarchy. It contains the headers and 
-                                 libraries of all user-space packages that provide and install libraries used by 
+                                 libraries of all -space packages that provide and install libraries used by 
                                  other packages. However, this directory is not intended to be the root filesystem 
                                  for the target: it contains a lot of development files, unstripped binaries and 
                                  libraries that make it far too big for an embedded system. These development files 
@@ -133,9 +133,14 @@ Buildroot
 
 * Other::
 
-   * Buildroot can be built with -j $(nproc) argument. This option allows you to build multiple packages
-   at the same time. But it option is experimental and works well in unpstream
-   buildroot. To enable this feature we must set BR2_PER_PACKAGES_DIRECTORY to 'y'. 
+   * Buildroot может быть собран с аргументом -j $(nproc). Эта опция позволяет вам собирать множество пакетов
+   одновременно. Но эта опция эксперементальная и работает хорошо в апстримном Buildroot. Для включения этой 
+   возможности, должны выставить BR2_PER_PACKAGES_DIRECTORY в 'y'.
+   Следует помнить, что одновременно - значит все зависимости пакетов, что собираются одновременно, уже 
+   удовлетворены. Посмотреть зависимости можно следующим образом (пример для linux):
+
+   $ make linux-show-depends
+   host-kmod host-skeleton host-tar skeleton toolchain
 
 
    * В условиях, когда мы работаем над каким-то компонентом, парадигма Buildroot-a неудобна. 
