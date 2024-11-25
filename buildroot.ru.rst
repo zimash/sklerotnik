@@ -47,6 +47,10 @@ Buildroot - это в основном набор Makefile-ов, что скач
                                  trees, the images and the toolchain)
    $ make distclean            # Resetting Buildroot for a new target: To delete all build products as well as the 
                                  configuration 
+* **ЗАМЕТКА!**
+  Если нет желания подготавливать хостовую систему для сборки buildroot-a, можно воспользоваться сборкой в контейнерном окружении.
+  Для этого необходимо запустить ``./utils/docker-run``. Если не передавать переменную ``IMAGE``, то будет использоваться образ из ``.gitlab-ci.yml``
+  файла. На текущий момент это ``image: $CI_REGISTRY/buildroot.org/buildroot/base:20230207.1123``.
 
 * Directories::
 
