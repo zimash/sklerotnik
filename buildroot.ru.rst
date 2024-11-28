@@ -172,6 +172,15 @@ Buildroot - это в основном набор Makefile-ов, что скач
    LINUX_OVERRIDE_SRCDIR = /home/bob/linux/
    BUSYBOX_OVERRIDE_SRCDIR = /home/bob/busybox/
 
+   * Сборка toolchain/sdk. Чтобы минимизировать время сборки образа, при условии неизменяемости toolchain/sdk, мы
+   можем пользоваться "внешним" toolchain-ом, полученным по сети или уже единожды собрав его под текущую конфигурацию.
+   Или использовать его для разработки ПО для конфигурируемой платформы.
+   $ make toolchain # build toolchain for selected config
+   $ make sdk       # build relocatable SDK
+
+   Также удобна опция BR2_PACKAGE_HOST_ENVIRONMENT_SETUP, создающая скрипт, упрощающий работу, настраивая окружение 
+   для подготовленного sdk.
+
 Links
 -----
 
