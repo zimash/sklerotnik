@@ -53,7 +53,32 @@ sandbox/sandbox64
   »       void *parent_priv;     
   ...
 
-      
+  /**                                                                   
+   * struct uclass - a U-Boot drive class, collecting together similar drivers
+   *                                                                          
+   * A uclass provides an interface to a particular function, which is        
+   ...
+   */
+  struct uclass {                        
+  »       void *priv;                    
+  »       struct uclass_driver *uc_drv;  
+  »       struct list_head dev_head;     
+  »       struct list_head sibling_node; 
+  };                                     
+
+  /**                                            
+   * struct uclass_driver - Driver for the uclass
+  ...
+   */
+  struct uclass_driver {                         
+  »       const char *name;                      
+  »       enum uclass_id id;                     
+  »       int (*post_bind)(struct udevice *dev); 
+  »       int (*pre_unbind)(struct udevice *dev);
+  »       int (*pre_probe)(struct udevice *dev); 
+  »       int (*post_probe)(struct udevice *dev);
+  »       int (*pre_remove)(struct udevice *dev);
+  ...
 
 tftp
 ====
