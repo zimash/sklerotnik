@@ -80,5 +80,20 @@ sandbox/sandbox64
   »       int (*pre_remove)(struct udevice *dev);
   ...
 
+uclass_id enums are stored in ./include/dm/uclass-id.h:
+-------------------------------------------------------
+
+.. code-block:: C
+
+  /* TODO(sjg@chromium.org): this could be compile-time generated */   
+  enum uclass_id {                                                     
+  »       /* These are used internally by driver model */              
+  »       UCLASS_ROOT = 0,                                             
+  »       UCLASS_DEMO,                                                 
+  »       UCLASS_TEST,                                                 
+  »       UCLASS_TEST_FDT,                                             
+  »       UCLASS_TEST_BUS,                                             
+  ...
+
 tftp
 ====
