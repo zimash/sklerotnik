@@ -2,6 +2,26 @@
 Das U-Boot
 ==========
 
+useful commands
+===============
+
+setenv xtrace yes
+-----------------
+
+Command execution tracer. Print all args in common/command.c/cmd_process (Symbol SYS_XTRACE in config). Example: 
+
+.. code-block:: shell
+
+  Hit any key to stop autoboot:  0
+  => setenv xtrace yes
+  => boot
+  + boot
+  + bootflow scan -lb
+  Scanning for bootflows in all bootdevs
+  Seq  Method       State   Uclass    Part  Name                      Filename                                                          
+  ---  -----------  ------  --------  ----  ------------------------  ----------------   
+  
+
 sandbox/sandbox64
 =================
 
