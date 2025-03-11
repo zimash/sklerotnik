@@ -115,5 +115,15 @@ uclass_id enums are stored in ./include/dm/uclass-id.h:
   »       UCLASS_TEST_BUS,                                             
   ...
 
+U-Boot configuration parameters
+===============================
+
+**CONFIG_SYS_LOAD_ADDR** - address in memory to use by default. For example used by default for "kernel image address (**addr**)" in "booti" or for "address of FIT to boot (**fit_addr / fit_addr2 / fit_addr3**)" in bootm;
+
+**CONFIG_STACK_SIZE** - Define max stack size that can be used by U-Boot;
+
+**CONFIG_TEXT_BASE** - Text Base. The address in memory that U-Boot will be copied and executed from initially.
+
+
 tftp
 ====
