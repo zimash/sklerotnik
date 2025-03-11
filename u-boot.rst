@@ -122,8 +122,9 @@ U-Boot configuration parameters
 
 **CONFIG_STACK_SIZE** - Define max stack size that can be used by U-Boot;
 
-**CONFIG_TEXT_BASE** - Text Base. The address in memory that U-Boot will be copied and executed from initially.
+**CONFIG_TEXT_BASE** - Text Base. The address in memory that U-Boot will be copied and executed from initially;
 
+**CONFIG_SYS_MALLOC_F_LEN** - Size of malloc() pool before relocation;
 
 tftp
 ====
