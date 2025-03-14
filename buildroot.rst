@@ -136,9 +136,11 @@ Buildroot
   We need to add local.mk file with a line::
 
    LINUX_OVERRIDE_SRCDIR=/path/to/where/you/cloned/linux_kernel
-   
 
-* Other::
+* BR2_PACKAGE_HOST_ENVIRONMENT_SETUP. Install an helper script to setup a build environment
+  based on Buildroot. It's useful when you export an sdk and want to use Buildroot to build an external project.
+
+* BR2_PER_PACKAGES_DIRECTORY::
 
    Buildroot can be built with -j $(nproc) argument. This option allows you to build multiple packages
    at the same time. But it option is experimental and works well in unpstream
