@@ -131,11 +131,20 @@ Buildroot
    TARGET_DIR                  - $(TOPDIR)/output/target, for example TARGET_DIR=~/git/buildroot/output/target
    BUILD_DIR                   - $(TOPDIR)/output/build, for example BUILD_DIR=~/git/buildroot/output/build
 
+* If we are working on some project, for example on the Linux kernel or something else, we can override the 
+  original code of the project (in general it will not be downloaded during the execution of ``make [pkg_]source``).
+  We need to add local.mk file with a line::
+
+   LINUX_OVERRIDE_SRCDIR=/path/to/where/you/cloned/linux_kernel
+   
+
 * Other::
 
    Buildroot can be built with -j $(nproc) argument. This option allows you to build multiple packages
    at the same time. But it option is experimental and works well in unpstream
-   buildroot. To enable this feature we must set BR2_PER_PACKAGES_DIRECTORY to 'y'. 
+   buildroot. To enable this feature we must set BR2_PER_PACKAGES_DIRECTORY to 'y'.
+
+   
 
 Links
 -----
