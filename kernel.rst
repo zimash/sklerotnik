@@ -62,6 +62,18 @@ Firewalls
   NF_QUEUE 3
   NF_REPEAT 4
 
+Linux Kernel start
+==================
+* If we have a NAND flash with UBIFS and we want to boot our system (kernel and initd) from it, in the line of
+  booting the kernel, we need to add a line similar to:
+.. code-block:: bash
+
+  APPEND console=ttyS0,115200n8 earlycon ubi.mtd=0 root=ubi0:boot rootfstype=ubifs rw rootwait
+
+  # Arguments
+  ubi.mtd=0         # mtd device
+  rootfstype=ubifs  # type of fs
+  root=ubi0:boot    # root partition with label, in this example it is `boot`
 
 Links
 =====
