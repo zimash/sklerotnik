@@ -34,6 +34,8 @@ Build external modules (without full compilation of the kernel)
 ===============================================================
 .. code-block:: shell
 
+  # In the current example all actions are performed from the kernel source directory
+  # For other cases, if necessary, we can refer to the documentation
   make <CONFIG>                    # Prepare the necessary configuration
   make modules_prepare             # Set up for building external modules
   make M=<path_to_module> modules  # Build module
