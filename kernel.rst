@@ -30,6 +30,16 @@ Installing the new kernel
   make install         # Install kernel using (your) ~/bin/installkernel or (distribution) /sbin/installkernel
                        # or install to $(INSTALL_PATH) and run lilo
 
+Build external modules (without full compilation of the kernel)
+===============================================================
+.. code-block:: shell
+
+  make <CONFIG>                    # Prepare the necessary configuration
+  make modules_prepare             # Set up for building external modules
+  make M=<path_to_module> modules  # Build module
+
+* `Building External Modules <https://docs.kernel.org/kbuild/modules.html>`_
+
 Process state
 =============
 .. code-block:: shell
