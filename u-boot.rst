@@ -32,6 +32,24 @@ sandbox/sandbox64
   $ make -j $(nproc --all)
   $ ./u-boot
 
+Driver model
+============
+
+Uclass
+
+    a group of devices which operate in the same way. A uclass provides a way of accessing individual devices within the group, but always using the same interface. For example a GPIO uclass provides operations for get/set value. An I2C uclass may have 10 I2C ports, 4 with one driver, and 6 with another.
+
+Driver
+
+    some code which talks to a peripheral and presents a higher-level interface to it.
+Device
+
+    an instance of a driver, tied to a particular port or peripheral.
+
+
+
+common structures
+=================
 
 .. code-block:: C
 
