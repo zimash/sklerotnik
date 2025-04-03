@@ -51,6 +51,7 @@ Failure to locate a device
 ==========================
 
 Sometimes we have to check if the device is actually bound. Call dm_dump_all() just before you locate the device to make sure it exists.
+NOTE: Replace references to dm_dump_all() with dm_dump_tree() in 913d830cf093c10ca3233038e81c11beb63ec802 merge.
 
 Example output of using dm_dump_all() in sandbox_spl_defconfig:
 
