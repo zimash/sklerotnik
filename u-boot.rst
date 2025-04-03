@@ -47,6 +47,41 @@ Device
     an instance of a driver, tied to a particular port or peripheral.
 
 
+Failure to locate a device
+==========================
+
+Sometimes we have to check if the device is actually bound. Call dm_dump_all() just before you locate the device to make sure it exists.
+
+Example output of using dm_dump_all() in sandbox_spl_defconfig:
+
+.. code-block:: C
+
+  $ ./spl/u-boot-spl -d ./spl/u-boot-spl.dtb 
+  sandbox: starting...
+
+  U-Boot SPL 2021.04-dirty (Apr 03 2025 - 08:57:14 +0300)
+  os_spl_to_uboot
+  sandbox: starting...
+
+
+  U-Boot 2021.04-dirty (Apr 03 2025 - 08:57:14 +0300)
+
+   Class     Index  Probed  Driver                Name
+  -----------------------------------------------------------
+   root          0  [ + ]   root_driver           root_driver
+   rsa_mod_ex    0  [   ]   mod_exp_sw            |-- mod_exp_sw
+   timer         0  [ + ]   sandbox_timer         |-- sandbox_timer
+   serial        0  [   ]   sandbox_serial        |-- sandbox_serial
+   clk           0  [   ]   fixed_clock           |-- clk-fixed
+   simple_bus    0  [   ]   simple_bus            |-- test-bus
+   serial        1  [ + ]   sandbox_serial        `-- serial
+  Model: sandbox
+  DRAM:  128 MiB
+  MMC:   
+  In:    serial
+  Out:   serial
+...
+                                   
 
 common structures
 =================
