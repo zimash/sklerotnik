@@ -34,9 +34,11 @@ QEMU
       /fwcfg[0] (memory-region)                 
     /peripheral (container)                                
     ...
+
 * `QEMU internals (airbus-seclab) <https://airbus-seclab.github.io/qemu_blog/>`_
 * `qemu tag (How to add a new architecture to QEMU - Parts 1, 2, 3, 4) <https://fgoehler.com/blog/category/qemu/>`_
-
+* `Внутреннее устройство эмулятора процессора на архитектуре RISC-V для портирования, разработки и отладки ПО (YADRO) <https://osday.ru/2023/presentations/burlaka.pdf>`_
+* `Игра в имитацию: как разрабатывать и отлаживать ПО для процессора, которого нет <https://habr.com/en/companies/yadro/articles/776252/>`_
 
    
 
