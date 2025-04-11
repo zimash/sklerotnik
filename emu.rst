@@ -18,7 +18,7 @@ QEMU
 ====
 .. code-block:: shell
 
-  # View QEMU device tree:
+  # View QOM composition tree and device tree:
   $ qemu-system-x86_64 -M q35 -s -S -monitor stdio # Run qemu as pc-q35 machine (-M q35)
                                                    # with freeze CPU at startup (-S), 
                                                    # with redirected monitor to stdio (-monitor stdio),
@@ -34,6 +34,25 @@ QEMU
       /fwcfg[0] (memory-region)                 
     /peripheral (container)                                
     ...
+  (qemu) info qtree                 
+  bus: main-system-bus               
+    type System                                                                                                                         
+    dev: ps2-mouse, id ""        
+      gpio-out "" 1             
+    dev: ps2-kbd, id ""         
+      gpio-out "" 1           
+    dev: hpet, id ""                    
+      gpio-in "" 2                         
+      gpio-out "" 1                
+      gpio-out "sysbus-irq" 32               
+      timers = 3 (0x3)                
+      msi = false                  
+      hpet-intcap = 4 (0x4)               
+      hpet-offset-saved = true         
+      mmio 00000000fed00000/0000000000000400
+    dev: ioapic, id ""                       
+...
+
 
 * `QEMU internals (airbus-seclab) <https://airbus-seclab.github.io/qemu_blog/>`_
 * `qemu tag (How to add a new architecture to QEMU - Parts 1, 2, 3, 4) <https://fgoehler.com/blog/category/qemu/>`_
