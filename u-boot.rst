@@ -182,3 +182,8 @@ U-Boot configuration parameters
 
 tftp
 ====
+
+Links
+=====
+
+Excellent question and excellent answer `[U-Boot] Many questions about U-Boot's Driver Model <https://u-boot.denx.narkive.com/EBuc4U2v/many-questions-about-s-driver-model>`_
