@@ -96,3 +96,4 @@ Links
 * `Linux Test Project <https://linux-test-project.readthedocs.io/en/latest/>`_
 * `Majordomo lists at VGER.KERNEL.ORG <http://vger.kernel.org/vger-lists.html>`_
 * `vger.kernel.org <https://subspace.kernel.org/vger.kernel.org.html>`_
+* `Thomas Petazzoni - Device Tree for Dummies <https://bootlin.com/pub/conferences/2014/elc/petazzoni-device-tree-dummies/petazzoni-device-tree-dummies.pdf>`_
