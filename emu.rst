@@ -58,8 +58,9 @@ QEMU
 * `qemu tag (How to add a new architecture to QEMU - Parts 1, 2, 3, 4) <https://fgoehler.com/blog/category/qemu/>`_
 * `Внутреннее устройство эмулятора процессора на архитектуре RISC-V для портирования, разработки и отладки ПО (YADRO) <https://osday.ru/2023/presentations/burlaka.pdf>`_
 * `Игра в имитацию: как разрабатывать и отлаживать ПО для процессора, которого нет <https://habr.com/en/companies/yadro/articles/776252/>`_
+* `Operating System in 1,000 Lines (EN) <https://operating-system-in-1000-lines.vercel.app/en/>`_
+* `Операционная система в 1 000 строках кода (часть 1) (RU) В пяти частях <https://habr.com/ru/companies/ruvds/articles/874154/>`_
 
-   
 
 Links
 -----
