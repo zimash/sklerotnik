@@ -87,6 +87,22 @@ Linux Kernel start
   rootfstype=ubifs  # type of fs
   root=ubi0:boot    # root partition with label, in this example it is `boot`
 
+Minimal kernel for testing in QEMU (x86_64)
+===========================================
+
+.. code-block:: bash
+
+  $ ARCH=x86_64 make tinyconfig # without tty devices and others things we need
+  $ ./scripts/config --enable CONFIG_TTY
+  $ ./scripts/config --enable CONFIG_SERIAL_8250
+  $ ./scripts/config --enable CONFIG_SERIAL_8250_CONSOLE
+
+
+  # Arguments
+  ubi.mtd=0         # mtd device
+  rootfstype=ubifs  # type of fs
+  root=ubi0:boot    # root partition with label, in this example it is `boot`
+
 Links
 =====
 
