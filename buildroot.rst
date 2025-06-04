@@ -14,6 +14,18 @@ Buildroot
    $ make menuconfig           # Interactive curses-based configurator
    $ make list-defconfigs      # Display the list of boards with a defconfig
    $ make show-info            # Generate info about packages, as a JSON blurb
+                               # Example:
+                               # $ make show-info | jq .
+                               # ...
+                               # "rootfs-ext2": {
+                               #   "type": "rootfs",
+                               #   "image_name": "rootfs.ext2",
+                               #   "dependencies": [
+                               #     "host-e2fsprogs",
+                               #     "rootfs-common"
+                               #   ]
+                               # },
+                               # ...
    $ make pkg-stats            # Generate info about packages as JSON and HTML
 
    $ make linux-menuconfig     # Run Linux kernel menuconfig (Only work when linux is enabled)
