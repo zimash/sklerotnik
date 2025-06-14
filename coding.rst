@@ -23,3 +23,9 @@ O(n)
    * - deletion
      - O(n)
      - O(1)
+
+
+-----
+Links
+-----
+* `Algorithms for Modern Hardware <https://en.algorithmica.org/hpc/>`_
